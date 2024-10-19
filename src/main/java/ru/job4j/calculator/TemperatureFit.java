@@ -10,7 +10,7 @@
         }
 
         public static void main(String[] args) {
-            int temperature = 10; // Example room temperature
+            int temperature = 10;
             double fruitsTemp = TemperatureFit.idealTemperatureForFruits(temperature);
             double meatTemp = TemperatureFit.idealTemperatureForMeat(temperature);
             System.out.println("Ideal temperature for fruits is " + fruitsTemp + "°C");
