@@ -4,28 +4,30 @@ import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.*;
 
 class CounterTest {
-
     @Test
-    void whenSumFrom22And5Then0() {
-        int a = 22, b = 5;
-        int expected = 0;
-        int output = Counter.sum(a, b);
-        assertThat(output).isEqualTo(expected);
+    void whenSumEvenNumbersFromOneToTenThenThirty() {
+        int start = 1;
+        int finish = 10;
+        int result = Counter.sumByEven(start, finish);
+        int expected = 30;
+        assertThat(result).isEqualTo(expected);
     }
 
     @Test
-    void whenSumFrom12And0Then0() {
-        int a = 12, b = 0;
-        int expected = 0;
-        int output = Counter.sum(a, b);
-        assertThat(output).isEqualTo(expected);
+    void whenSumEvenNumbersFromMinus10ToSixThenMinus18() {
+        int start = -10;
+        int finish = 6;
+        int result = Counter.sumByEven(start, finish);
+        int expected = -18;
+        assertThat(result).isEqualTo(expected);
     }
 
     @Test
-    void whenSumFrom10And20Then165() {
-        int a = 10, b = 20;
-        int expected = 165;
-        int output = Counter.sum(a, b);
-        assertThat(output).isEqualTo(expected);
+    void whenSumEvenNumbersFromThreeToThreeThenZero() {
+        int start = 3;
+        int finish = 3;
+        int result = Counter.sumByEven(start, finish);
+        int expected = 0;
+        assertThat(result).isEqualTo(expected);
     }
 }
