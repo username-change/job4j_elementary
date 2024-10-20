@@ -30,6 +30,5 @@ public class MathCalculator {
         System.out.println("Результат расчета равен: " + differenceAndDivision(10, 20));
         System.out.println("Результат расчета равен: " + sumDifferenceAndDivision(10, 20));
         System.out.println("Результат расчета равен: " + sumAllOperations(10, 20));
-
     }
 }
