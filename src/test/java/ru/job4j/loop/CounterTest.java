@@ -11,7 +11,6 @@ class CounterTest {
         int expected = 0;
         int output = Counter.sum(a, b);
         assertThat(output).isEqualTo(expected);
-
     }
 
     @Test
