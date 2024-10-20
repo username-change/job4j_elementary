@@ -11,6 +11,5 @@ public class Vector {
         String result = addVectors(6, 4, 2, 1);
         System.out.println("result (6, 4) + (2, 1) = " + result);
 
-
     }
 }
