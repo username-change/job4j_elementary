@@ -6,12 +6,12 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 class SavingsTest {
     @Test
-    void whenGoal500Deposit100Percent5ThenYears5() {
-        double goal = 500;
-        double annualDeposit = 100;
-        double percent = 5;
+    void whenGoal2000Deposit500Percent5ThenYears4() {
+        double goal = 2000;
+        double annualDeposit = 500;
+        double percent = 15;
         int result = Savings.years(goal, annualDeposit, percent);
-        int expected = 5;
+        int expected = 4;
         assertThat(result).isEqualTo(expected);
     }
 
