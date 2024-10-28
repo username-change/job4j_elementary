@@ -5,38 +5,54 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 class MatrixCheckTest {
     @Test
-    public void whenDiagonalFullX() {
+    public void whenDataMonoByTrueThenTrue() {
         char[][] input = {
-                {'X', ' ', ' '},
-                {' ', 'X', ' '},
-                {' ', ' ', 'X'},
+                {' ', ' ', 'X', ' ', ' '},
+                {' ', ' ', 'X', ' ', ' '},
+                {' ', ' ', 'X', ' ', ' '},
+                {' ', ' ', 'X', ' ', ' '},
+                {' ', ' ', 'X', ' ', ' '},
         };
-        char[] result = MatrixCheck.extractDiagonal(input);
-        char[] expected = {'X', 'X', 'X'};
-        assertThat(result).containsExactly(expected);
+        boolean result = MatrixCheck.isWin(input);
+        assertThat(result).isTrue();
     }
 
     @Test
-    public void whenDiagonalFullOne() {
+    public void whenDataNotMonoByTrueThenFalse() {
         char[][] input = {
-                {'1', ' ', ' '},
-                {' ', '1', ' '},
-                {' ', ' ', '1'},
+                {' ', ' ', 'X', ' ', ' '},
+                {' ', ' ', 'X', ' ', ' '},
+                {' ', 'X', ' ', ' ', ' '},
+                {' ', ' ', 'X', ' ', ' '},
+                {' ', ' ', 'X', ' ', ' '},
         };
-        char[] result = MatrixCheck.extractDiagonal(input);
-        char[] expected = {'1', '1', '1'};
-        assertThat(result).containsExactly(expected);
+        boolean result = MatrixCheck.isWin(input);
+        assertThat(result).isFalse();
     }
 
     @Test
-    public void whenDiagonalMix() {
+    public void whenDataHMonoByTrueThenTrue() {
         char[][] input = {
-                {'X', ' ', ' '},
-                {' ', 'Y', ' '},
-                {' ', ' ', 'Z'},
+                {' ', ' ', ' ', ' ', ' '},
+                {' ', ' ', ' ', ' ', ' '},
+                {'X', 'X', 'X', 'X', 'X'},
+                {' ', ' ', 'X', ' ', ' '},
+                {' ', ' ', 'X', ' ', ' '},
         };
-        char[] result = MatrixCheck.extractDiagonal(input);
-        char[] expected = {'X', 'Y', 'Z'};
-        assertThat(result).containsExactly(expected);
+        boolean result = MatrixCheck.isWin(input);
+        assertThat(result).isTrue();
+    }
+
+    @Test
+    public void whenDataDiagMonoIsTrueThenFalse() {
+        char[][] input = {
+                {'X', ' ', ' ', ' ', ' '},
+                {' ', 'X', ' ', ' ', ' '},
+                {' ', ' ', 'X', ' ', ' '},
+                {' ', ' ', ' ', 'X', ' '},
+                {' ', ' ', ' ', ' ', 'X'},
+        };
+        boolean result = MatrixCheck.isWin(input);
+        assertThat(result).isFalse();
     }
 }
