@@ -20,4 +20,3 @@ out
 *.log
 
 *.DS_Store
-target/
