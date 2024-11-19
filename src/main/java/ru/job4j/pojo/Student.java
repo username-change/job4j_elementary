@@ -7,6 +7,7 @@ public class Student {
 	private String surname;
 	private String patronymic;
 	private String group;
+	private Date created;
 
 	public String getName() {
 		return name;
@@ -48,5 +49,4 @@ public class Student {
 		this.created = created;
 	}
 
-	private Date created;
 }
