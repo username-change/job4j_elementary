@@ -58,8 +58,10 @@ public class License {
 			return false;
 		}
 		License other = (License) obj;
-		return Objects.equals(code, other.code) && Objects.equals(created, other.created)
-				&& Objects.equals(model, other.model) && Objects.equals(owner, other.owner);
+		return Objects.equals(code, other.code) 
+				&& Objects.equals(created, other.created)
+				&& Objects.equals(model, other.model) 
+				&& Objects.equals(owner, other.owner);
 	}
     
 }
