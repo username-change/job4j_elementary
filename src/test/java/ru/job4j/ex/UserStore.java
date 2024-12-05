@@ -18,20 +18,23 @@ public class UserStore {
 	}
 
 	public static void main(String[] args) {
+		User[] users = {
+				new User("Petr Arsentev", true),
+				new User("Pe", true) 
+				};
+		
 		try {
-			User[] users = {
-					new User("Petr Arsentev", true),
-					new User("Pe", false)
-					};
 			User user = findUser(users, "Petr Arsentev");
 			if (validate(user)) {
 				System.out.println("этот пользователь имеет доступ");
 
-			User user2 = findUser(users, "Pe");
-			if (validate(user2)) {
-				System.out.println("этот пользователь имеет доступ");
+				User user2 = findUser(users, "Pe");
+				if (validate(user2)) {
+					System.out.println("этот пользователь имеет доступ");
 				}
 			}
+		} catch (UserInvalidException e) {
+			System.out.println(e.getMessage());
 		} catch (UserNotFoundException e) {
 			System.out.println(e.getMessage());
 		}
